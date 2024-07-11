@@ -1,7 +1,7 @@
 ## Movie review app | 영화리뷰앱
 
-- [] Router 설정
-- [] 컴포넌트, 폴더 등 설정
+- [o] Router 설정
+- [o] 컴포넌트, 폴더 등 설정
 - [] Api 설정
 - [] Header, Footer 컴포넌트 구성
 - [] Loading 컴포넌트 구성
