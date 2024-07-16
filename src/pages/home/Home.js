@@ -4,6 +4,7 @@ import { Loading } from "../../components/Loading";
 import styled from "styled-components";
 import { spacing } from "../../GlobalStyled";
 import { ORIGIN_URL } from "../../constant/imgUrl";
+import { Title } from "../../components/Title";
 
 const MainBanner = styled.section`
   height: 80vh;
@@ -102,6 +103,7 @@ export const Home = () => {
       ) : (
         <>
           <MainBanner $bgUrl={nowData[0].backdrop_path}>
+            {/* <Title titleName={"HOME"} /> */}
             <BlackBg />
             <h3>{nowData[0].title}</h3>
             <p>{nowData[0].overview.slice(0, 100) + "..."}</p>

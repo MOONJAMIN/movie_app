@@ -6,8 +6,8 @@
 - [o] Header, Footer 컴포넌트 구성
 - [o] Loading 컴포넌트 구성
 - [o] 웹폰트 설정
-- [] 각 페이지 UI 구성과 반응형
-- [] Helmet
+- [o] 각 페이지 UI 구성과 반응형
+- [o] Helmet
 - [] Header scroll Event
 - [] Deploy !! 최종
 
@@ -22,8 +22,7 @@
 - [] helmet-async
 - [] react-icons
 
-
----------------------------------------------
+---
 
 react-life-cycle
 => 라이프사이클 = 컴포넌트의 수명주기
