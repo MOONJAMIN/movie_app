@@ -3,9 +3,9 @@
 - [o] Router 설정
 - [o] 컴포넌트, 폴더 등 설정
 - [o] Api 설정
-- [] Header, Footer 컴포넌트 구성
+- [o] Header, Footer 컴포넌트 구성
 - [o] Loading 컴포넌트 구성
-- [] 웹폰트 설정
+- [o] 웹폰트 설정
 - [] 각 페이지 UI 구성과 반응형
 - [] Helmet
 - [] Header scroll Event
@@ -14,13 +14,16 @@
 ## 설치 항목
 
 - [o] react-router-dom
-- [] styled-components
-- [] styled-reset
+- [o] styled-components
+- [o] styled-reset
 - [] swiper
 - [] font-awesome
 - [] react-hook-form
 - [] helmet-async
 - [] react-icons
+
+
+---------------------------------------------
 
 react-life-cycle
 => 라이프사이클 = 컴포넌트의 수명주기

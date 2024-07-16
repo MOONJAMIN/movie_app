@@ -1,10 +1,10 @@
 import { routes } from "../routes";
 import styled from "styled-components";
-import { colors } from "../GlobalStyled";
+import { colors, spacing } from "../GlobalStyled";
 import { Link } from "react-router-dom";
 
 const Container = styled.header`
-  padding: 20px 100px;
+  padding: 20px ${spacing.side};
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -12,6 +12,11 @@ const Container = styled.header`
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 10;
+
+  @media screen and (max-width: 768px) {
+    padding: 20px ${spacing.moSide};
+  }
 `;
 const Logo = styled.div`
   font-size: 26px;
@@ -26,6 +31,12 @@ const Menu = styled.ul`
   font-weight: 600;
   li {
     margin-left: 150px;
+  }
+
+  @media screen and (max-width: 768px) {
+    li {
+      margin-left: 50px;
+    }
   }
 `;
 
