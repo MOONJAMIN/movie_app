@@ -1,64 +1,11 @@
+/** @format */
+
 import { useEffect, useState } from "react";
 import { nowPlaying, popular, topRated, upcoming } from "../../api";
 import { Loading } from "../../components/Loading";
-import styled from "styled-components";
-import { spacing } from "../../GlobalStyled";
-import { ORIGIN_URL } from "../../constant/imgUrl";
-import { Title } from "../../components/Title";
-
-const MainBanner = styled.section`
-  height: 80vh;
-  background: url(${ORIGIN_URL}${(props) => props.$bgUrl}) no-repeat center /
-    cover;
-  padding: 420px ${spacing.side} 0 ${spacing.side};
-  position: relative;
-  h3 {
-    font-size: 80px;
-    font-weight: 700;
-    letter-spacing: -3px;
-    margin-bottom: 30px;
-    position: relative;
-  }
-
-  p {
-    width: 600px;
-    line-height: 20px;
-    opacity: 0.7;
-    font-weight: 300;
-  }
-
-  @media screen and (max-width: 768px) {
-    padding: 550px ${spacing.moSide} 0 ${spacing.moSide};
-
-    h3 {
-      font-size: 40px;
-      margin-bottom: 15px;
-    }
-    p {
-      max-width: 500px;
-      width: 100%;
-      font-size: 14px;
-      line-height: 20px;
-    }
-  }
-`;
-
-const BlackBg = styled.div`
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  font-size: 20px;
-  opacity: 0.7;
-  font-weight: 300;
-  background: linear-gradient(
-    0deg,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(0, 0, 0, 0.8015581232492998) 52%,
-    rgba(0, 0, 0, 0.21052170868347342) 100%
-  );
-`;
+import "swiper/css";
+import { Movies } from "./components/Movies";
+import { MainBanner } from "./components/MainBanner";
 
 export const Home = () => {
   const [nowData, setNowData] = useState();
@@ -102,12 +49,13 @@ export const Home = () => {
         <Loading />
       ) : (
         <>
-          <MainBanner $bgUrl={nowData[0].backdrop_path}>
-            {/* <Title titleName={"HOME"} /> */}
-            <BlackBg />
-            <h3>{nowData[0].title}</h3>
-            <p>{nowData[0].overview.slice(0, 100) + "..."}</p>
-          </MainBanner>
+          <MainBanner data={nowData[0]} />
+
+          <Movies movieData={nowData} />
+          <Movies title="현재 상영 영화" movieData={nowData} />
+          <Movies title="인기 영화" movieData={popData} />
+          <Movies title="평점 좋음" movieData={topData} />
+          <Movies title="개봉 예정" movieData={upData} />
         </>
       )}
     </>
