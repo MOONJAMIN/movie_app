@@ -1,9 +1,6 @@
-/** @format */
-
 import { useEffect, useState } from "react";
 import { nowPlaying, popular, topRated, upcoming } from "../../api";
 import { Loading } from "../../components/Loading";
-import "swiper/css";
 import { Movies } from "./components/Movies";
 import { MainBanner } from "./components/MainBanner";
 
