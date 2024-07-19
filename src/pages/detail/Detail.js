@@ -12,7 +12,12 @@ const Container = styled.div`
 
 const CoverImg = styled.img`
   width: 45%;
+  object-fit: cover;
   margin-right: 5%;
+
+  @media screen and (max-width: 1024px) {
+    width: 30%;
+  }
 `;
 
 const ConWrap = styled.div`
@@ -23,6 +28,10 @@ const ConWrap = styled.div`
     font-size: 50px;
     font-weight: 700;
     margin-bottom: 30px;
+    @media screen and (max-width: 1024px) {
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
   }
 `;
 
@@ -35,6 +44,11 @@ const Info = styled.div`
     font-size: 18px;
     font-weight: 400;
     margin-right: 20px;
+
+    @media screen and (max-width: 1024px) {
+      font-size: 14px;
+      padding: 5px 5px;
+    }
   }
 
   display: flex;

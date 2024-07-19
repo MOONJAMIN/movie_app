@@ -59,3 +59,51 @@ try{
 // // asyne , await =>비동기 사용 할 때 씀
 
 웹표준을 안 지켰을 때 - 검색불가(노출이 안됌)
+
+map
+=> 배열에만 사용됌
+ex)
+const data = [
+         {
+            id: 0,
+            title: "title_1"
+            desc: 컨텐츠 타이틀 4번
+         }
+      ] 
+      사용법
+      data.map(변수명(con) => (
+      con.사용할 내용
+      ))
+
+api / fetch
+=> const fetch = require("node-fetch"); <= import하는 방법
+fetch = > api를 사용할 때 요청할 때 필요함
+
+api---
+fetch (a, b).then(())
+a = 기본url b = options
+promise = 비동기
+
+useQuery
+=>
+
+axios
+=>
+
+useParams
+=>
+
+helmet
+=>
+
+
+
+Swiper
+=>
+
+
+
+globalStyled
+=>
+
+
