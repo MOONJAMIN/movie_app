@@ -1,29 +1,114 @@
 import { useEffect, useState } from "react";
 import { movieDetail } from "../../api";
 import styled from "styled-components";
+import { Loading } from "../../components/Loading";
+import { ORIGIN_URL } from "../../constant/imgUrl";
+import { useParams } from "react-router-dom";
 
 const Container = styled.div`
-  width: 500px;
-  height: 600px;
+  padding: 150px 20%;
+  display: flex;
 `;
 
-const TitleWrap = styled.h2``;
+const CoverImg = styled.img`
+  width: 45%;
+  margin-right: 5%;
+`;
+
+const ConWrap = styled.div`
+  width: 40%;
+  margin-top: 80px;
+
+  h3 {
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: 30px;
+  }
+`;
+
+const Info = styled.div`
+  span {
+    display: block;
+    padding: 10px 20px;
+    background-color: #555;
+    border-radius: 20px;
+    font-size: 18px;
+    font-weight: 400;
+    margin-right: 20px;
+  }
+
+  display: flex;
+`;
+
+const Genres = styled.ul`
+  list-style: disc;
+  font-size: 18px;
+  margin-top: 20px;
+  margin-left: 20px;
+  li {
+    margin-top: 10px;
+  }
+`;
+
+const Desc = styled.div`
+  font-size: 18px;
+  font-weight: 400;
+  opacity: 0.7;
+  margin-top: 100px;
+  line-height: 30px;
+`;
 
 export const Detail = () => {
   const [detailData, setDetailData] = useState();
+  const [isLoading, setIsLoading] = useState(true);
+  const { id: movieId } = useParams();
+  // console.log(movieId);
 
   useEffect(() => {
     (async () => {
       try {
-        const data = await movieDetail(1022789);
+        const data = await movieDetail(movieId);
 
         setDetailData(data);
+        setIsLoading(false);
       } catch (error) {
         console.log(error);
       }
     })();
   }, []);
-  console.log(detailData);
+  // console.log(detailData);
 
-  return <Container></Container>;
+  return (
+    <div>
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <Container>
+          <CoverImg
+            src={ORIGIN_URL + detailData.poster_path}
+            alt={detailData.title}
+          />
+          <ConWrap>
+            <h3>{detailData.title}</h3>
+
+            <Info>
+              <span>{detailData.release_date}</span>
+
+              <span>{detailData.runtime}분</span>
+
+              <span>{Math.round(detailData.vote_average)}점</span>
+            </Info>
+
+            <Genres>
+              {detailData.genres.map((genre) => (
+                <li key={genre.id}>{genre.name}</li>
+              ))}
+            </Genres>
+
+            <Desc>{detailData.overview}</Desc>
+          </ConWrap>
+        </Container>
+      )}
+    </div>
+  );
 };
