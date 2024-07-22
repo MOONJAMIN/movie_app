@@ -27,6 +27,7 @@ const params = {
     },
     640: {
       slidesPerView: 5.2,
+      spaceBetween: 15,
     },
     320: {
       slidesPerView: 3.2,

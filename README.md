@@ -7,7 +7,7 @@
 - [o] Loading 컴포넌트 구성
 - [o] 웹폰트 설정
 - [o] 각 페이지 UI 구성과 반응형
-- [o] Helmet
+- [] Helmet
 - [] Header scroll Event
 - [] Deploy !! 최종
 
@@ -16,11 +16,11 @@
 - [o] react-router-dom
 - [o] styled-components
 - [o] styled-reset
-- [] swiper
+- [o] swiper
 - [] font-awesome
-- [] react-hook-form
+- [o] react-hook-form
 - [] helmet-async
-- [] react-icons
+- [o] react-icons
 
 ---
 
@@ -64,16 +64,16 @@ map
 => 배열에만 사용됌
 ex)
 const data = [
-         {
-            id: 0,
-            title: "title_1"
-            desc: 컨텐츠 타이틀 4번
-         }
-      ] 
-      사용법
-      data.map(변수명(con) => (
-      con.사용할 내용
-      ))
+{
+id: 0,
+title: "title_1"
+desc: 컨텐츠 타이틀 4번
+}
+]
+사용법
+data.map(변수명(con) => (
+con.사용할 내용
+))
 
 api / fetch
 => const fetch = require("node-fetch"); <= import하는 방법
@@ -91,19 +91,13 @@ axios
 =>
 
 useParams
-=>
-
-helmet
-=>
-
-
+=> 경로에 관련된 것 url:(변수값) 값을 알아오는 함수
 
 Swiper
 =>
 
-
-
 globalStyled
+=> 전역스타일
+
+helmet
 =>
-
-
