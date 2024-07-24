@@ -10,5 +10,5 @@ const Container = styled.div`
 `;
 
 export const Footer = () => {
-  return <Container>&copy; pncoding 2024</Container>;
+  return <Container>&copy; MoonJaMin</Container>;
 };
