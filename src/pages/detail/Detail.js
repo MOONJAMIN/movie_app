@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { Loading } from "../../components/Loading";
 import { ORIGIN_URL } from "../../constant/imgUrl";
 import { useParams } from "react-router-dom";
+import { useScrollTop } from "../../lib/useScrollTop";
 
 const Container = styled.div`
   padding: 150px 20%;
@@ -73,6 +74,7 @@ const Desc = styled.div`
 `;
 
 export const Detail = () => {
+  useScrollTop();
   const [detailData, setDetailData] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const { id: movieId } = useParams();
