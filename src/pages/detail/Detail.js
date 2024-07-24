@@ -78,7 +78,6 @@ export const Detail = () => {
   const [detailData, setDetailData] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const { id: movieId } = useParams();
-  // console.log(movieId);
 
   useEffect(() => {
     (async () => {
@@ -92,7 +91,6 @@ export const Detail = () => {
       }
     })();
   }, []);
-  // console.log(detailData);
 
   return (
     <div>
